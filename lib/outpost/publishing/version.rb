@@ -1,5 +1,5 @@
 module Outpost
-  module PublishAlarms
+  module Publishing
     VERSION = "0.0.1"
   end
 end

@@ -1,16 +1,16 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'outpost/publish_alarms/version'
+require 'outpost/publishing/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "outpost-publish_alarms"
+  spec.name          = "outpost-publishing"
   spec.version       = Outpost::PublishAlarms::VERSION
   spec.authors       = ["Bryan Ricker"]
   spec.email         = ["bricker88@gmail.com"]
-  spec.description   = %q{TODO: Write a gem description}
-  spec.summary       = %q{TODO: Write a gem summary}
-  spec.homepage      = ""
+  spec.description   = %q{Enhanced content publishing for Outpost.}
+  spec.summary       = %q{Outpost plugin for adding scheduled publishing and some slick UI help.}
+  spec.homepage      = "https://github.com/SCPR/outpost-publishing"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files`.split($/)
@@ -20,4 +20,5 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency "bundler", "~> 1.3"
   spec.add_development_dependency "rake"
+  spec.add_development_dependency "rspec-rails"
 end

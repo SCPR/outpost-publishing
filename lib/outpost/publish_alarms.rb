@@ -1,7 +1,8 @@
-require "outpost/publish_alarms/version"
+require "outpost/publishing/version"
 
 module Outpost
-  module PublishAlarms
-    # Your code goes here...
+  module Publishing
+    class Engine < ::Rails::Engine
+    end
   end
 end
