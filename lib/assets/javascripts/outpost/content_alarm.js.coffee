@@ -4,7 +4,7 @@
 # Show/hide ContentAlarm fields based on status.
 # Also renders messages based on status & timestamp
 #
-class outpost.ContentAlarmUI extends outpost.PublishingHelper
+class outpost.ContentAlarm extends outpost.PublishingHelper
     constructor: (@options={}) ->
         super
         
