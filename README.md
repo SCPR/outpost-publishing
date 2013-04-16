@@ -27,6 +27,8 @@ Then instantiate using Javascript. Initialize by passing in a few options:
 * the selector of the div wrapper around the publishing fields,
 * the selector for where to render the notifications,
 * the selector for the status input
+* (optional) `statusPending` and `statusPublished` to indicate the value
+for each of those. Default is 3 and 5, respectively.
 
 ```javascript
 $(function() {
