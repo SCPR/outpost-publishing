@@ -42,12 +42,10 @@ $(function() {
 
 ### Content Alarms
 
-This gem provides a mixin, `Outpost::Publishing::ActsAsAlarm`, which you can
-mix in to any class which you want to acts as an alarm. It adds a polymorphic
-association with `content`, a scope for finding `pending` alarms, and a few
-other methods. Look at the mixin for all of the details.
+This gem only provides UI for content alarms. You'll need to do the
+server-side stuff yourself.
 
-To make an alarm, add a table:
+An alarm might look like this:
 
 ```ruby
 create_table :publish_alarms do |t|
@@ -58,29 +56,11 @@ create_table :publish_alarms do |t|
 end
 
 add_index :publish_alarms, [:content_type, :content_id]
+add_index :publish_alarms, :fire_at
 ```
 
-Then the class would look something like:
-
-```ruby
-class PublishAlarm < ActiveRecord::Base
-  include Outpost::Publishing::ActsAsAlarm
-end
-```
-
-"Publishing" is currently the only action that is supported by default.
-You can override the `fire` instance method to change what the alarm actually
-does, and you'll also need to handle the association stuff yourself (see 
-PublishAlarmAssociation for how that works).
-
-You should also create a rake task for easy cronjobbing:
-
-```ruby
-desc "Fire pending alarms"
-task :fire_alarms => [:environment] do
-  PublishAlarm.fire_pending
-end
-```
+The only things that the UI script requires is a "fire_at" field, and a status
+field to read.
 
 
 ## Contributing

@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Bryan Ricker"]
   spec.email         = ["bricker88@gmail.com"]
   spec.description   = %q{Enhanced content publishing for Outpost.}
-  spec.summary       = %q{Outpost plugin for adding scheduled publishing and some slick UI help.}
+  spec.summary       = %q{Outpost plugin for publishing helper UI.}
   spec.homepage      = "https://github.com/SCPR/outpost-publishing"
   spec.license       = "MIT"
 
