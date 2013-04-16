@@ -4,10 +4,16 @@
 # Some shared code for rendering alerts, and toggling fields
 #
 class outpost.PublishingHelper
-    statusPending:    "3"
-    statusPublished:  "5"
+    defaults:
+        statusPending:    "3"
+        statusPublished:  "5"
     
     constructor: (@options={}) ->
+        _.defaults @options, @defaults
+
+        @statusPending   = @options.statusPending
+        @statusPublished = @options.statusPublished
+
         # Elements
         @form          = $ @options.form
         @container     = $ @options.container,     @form # Wrapper for the fields
