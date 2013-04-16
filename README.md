@@ -73,6 +73,15 @@ You can override the `fire` instance method to change what the alarm actually
 does, and you'll also need to handle the association stuff yourself (see 
 PublishAlarmAssociation for how that works).
 
+You should also create a rake task for easy cronjobbing:
+
+```ruby
+desc "Fire pending alarms"
+task :fire_alarms => [:environment] do
+  PublishAlarm.fire_pending
+end
+```
+
 
 ## Contributing
 
