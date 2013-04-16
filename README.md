@@ -70,7 +70,8 @@ end
 
 "Publishing" is currently the only action that is supported by default.
 You can override the `fire` instance method to change what the alarm actually
-does.
+does, and you'll also need to handle the association stuff yourself (see 
+PublishAlarmAssociation for how that works).
 
 
 ## Contributing

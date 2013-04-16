@@ -1,5 +1,7 @@
+#= require outpost/publishing_helper
+
 ##
-# ContentAlarmUI
+# ContentAlarm
 #
 # Show/hide ContentAlarm fields based on status.
 # Also renders messages based on status & timestamp

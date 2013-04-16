@@ -5,7 +5,7 @@ require 'outpost/publishing/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "outpost-publishing"
-  spec.version       = Outpost::PublishAlarms::VERSION
+  spec.version       = Outpost::Publishing::VERSION
   spec.authors       = ["Bryan Ricker"]
   spec.email         = ["bricker88@gmail.com"]
   spec.description   = %q{Enhanced content publishing for Outpost.}

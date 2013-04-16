@@ -1,3 +1,5 @@
+#= require outpost/publishing_helper
+
 ##
 # PublishingUI
 #

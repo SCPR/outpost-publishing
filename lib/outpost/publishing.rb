@@ -1,5 +1,4 @@
 require "outpost/publishing/version"
-require "outpost/publishing/association"
 require "outpost/publishing/acts_as_alarm"
 
 module Outpost
