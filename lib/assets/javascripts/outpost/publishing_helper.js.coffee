@@ -7,7 +7,7 @@ class outpost.PublishingHelper
     defaults:
         statusPending:    "3"
         statusPublished:  "5"
-    
+
     constructor: (@options={}) ->
         _.defaults @options, @defaults
 
@@ -25,26 +25,26 @@ class outpost.PublishingHelper
             change: (event) =>
                 @setStatus()
                 @notify()
-        
+
     #----------
     # Get the current status from the dropdown
     setStatus: ->
         @status = $("option:selected", @statusField).val()
-    
+
     #----------
     # Helpers for finding current and original status
     isPending: ->
         @status is @statusPending
-        
+
     isPublished: ->
         @status is @statusPublished
-        
+
     wasPending: ->
         @originalStatus is @statusPending
-        
+
     wasPublished: ->
         @originalStatus is @statusPublished
-        
+
     #----------
     # Handles scenarios
     notify: ->
@@ -54,14 +54,14 @@ class outpost.PublishingHelper
     # Render the notification
     alert: (key) ->
         @alerts[key].render()
-        
+
     #----------
     # Mass-Detach all of the alerts
     clearAlerts: ->
         alert.detach() for name,alert of @alerts
 
     #----------
-    
+
     showFields: ->
         @container.show()
 

@@ -9,10 +9,10 @@
 class outpost.ContentAlarm extends outpost.PublishingHelper
     constructor: (@options={}) ->
         super
-        
-        # The actual datetime input 
+
+        # The actual datetime input
         @datetimeField = @container.find("input.datetime")
-        
+
         # Alerts
         @alerts =
             isScheduled:    new outpost.Notification(@notifications, "success", "This content is <strong>scheduled</strong> to be published.")
@@ -23,10 +23,10 @@ class outpost.ContentAlarm extends outpost.PublishingHelper
         @hideFields() # Hidden by default.
         @setTimestamp()
         @notify()
-        
+
         # Event for when the timestamp field is changed
         @datetimeField.on
-            update: (event) => 
+            update: (event) =>
                 @setTimestamp()
                 @notify()
 
@@ -39,22 +39,22 @@ class outpost.ContentAlarm extends outpost.PublishingHelper
 
     notify: ->
         @clearAlerts()
-        
+
         timestampFilled = !_.isEmpty(@timestamp)
         isPending       = @isPending()
         isPublished     = @isPublished()
-        
+
         # Show the fields if it's pending.
         if isPending then @showFields() else @hideFields()
-        
+
         # When it IS scheduled
         if isPending and timestampFilled
             return @alert 'isScheduled'
-        
+
         # When it ISN'T scheduled
         if isPending and !timestampFilled
             return @alert 'isNotScheduled'
-        
+
         # This one assumes that the PublishingUI script
         # will let the user know about Publishing Immediately.
         if !isPending and !isPublished and timestampFilled
